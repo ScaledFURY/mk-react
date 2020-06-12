@@ -1,15 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
-import config from './config';
 import ApiClient from './api_client';
+import loadSettings from './load_settings';
+
 
 
 function App() {
-  return JSON.stringify(config);
+  const promises = [];
+  const settings = loadSettings();
+  const apiClient = new ApiClient(settings);
+  const [cart,setCart] = useState({});
+  
+  
+  console.log(settings);
+  
+  useEffect(() => {
+    // Using an IIFE
+    (async function anyNameFunction() {
+      setCart(await apiClient.getCart(settings));
+    })();
+  }, []);
+  
+  if (Object.keys(cart).length === 0) {
+    return "Loading";
+  }
   
   return (
-    <h1>Demo</h1>
+    <h1>{JSON.stringify(cart)}</h1>
 
   );
 }

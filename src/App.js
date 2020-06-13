@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import './App.css';
+import './app.css';
 import ApiClient from './api_client';
 import loadSettings from './load_settings';
 import SubtotalValue from './subtotal_value';
 import Loading from './loading';
+import Prism from 'prismjs';
+import 'prismjs/themes/prism.css';
 
 function App() {
   const promises = [];
@@ -23,7 +25,23 @@ function App() {
   }
   
   return (
-    <h1><SubtotalValue cart={cart} /></h1>
+    
+    <div className="container">
+
+      <div className="feature">
+        <div className="code">
+          <pre>
+            <code>
+            {`<SubtotalValue cart={cart} />`}
+            </code>
+          </pre>
+        </div>
+        <div className="example">
+          <SubtotalValue cart={cart} />
+        </div>
+      </div>
+    </div>
+    
 
   );
 }

@@ -8,6 +8,7 @@ import Loading from './loading';
 import Prism from 'prismjs';
 import PrismJsx from 'prismjs/components/prism-jsx.min';
 import Cart from './components/cart';
+import AddonToggle from './components/addon_toggle';
 
 import 'prismjs/themes/prism.css';
 
@@ -71,6 +72,25 @@ const Feature3 = (props) => {
 };
 
 
+const Feature4 = (props) => {
+  const cart = props.cart;
+  return (
+    <div className="feature">
+      <div className="code">
+        <pre>
+          <code className="language-jsx">
+          {`<AddonToggle variantId={32465472979081} text={"Addon 32465472979081"} {...props} />`}
+          </code>
+        </pre>
+      </div>
+      <div className="example">
+        <AddonToggle variantId={32465472979081} text={"Addon 32465472979081"} {...props} />
+      </div>
+    </div>
+  );    
+};
+
+
 
 function App() {
   const promises = [];
@@ -106,6 +126,7 @@ function App() {
       <Feature3 {...props} />
       <Feature1 {...props} />
       <Feature2 {...props} />
+      <Feature4 {...props} />
     </div>
     
 

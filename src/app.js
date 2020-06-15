@@ -7,6 +7,7 @@ import VariantSelectButton from './components/variant_select_button';
 import Loading from './loading';
 import Prism from 'prismjs';
 import PrismJsx from 'prismjs/components/prism-jsx.min';
+import Cart from './components/cart';
 
 import 'prismjs/themes/prism.css';
 
@@ -14,7 +15,6 @@ window.Prism = Prism;  Prism.highlightAll();
 
 
 const Feature1 = (props) => {
-  const cart = props.cart;
   return (
     <div className="feature">
       <div className="code">
@@ -32,7 +32,6 @@ const Feature1 = (props) => {
 };
 
 const Feature2 = (props) => {
-  const cart = props.cart;
   return (
     <div className="feature">
       <div className="code">
@@ -47,6 +46,25 @@ const Feature2 = (props) => {
         <VariantSelectButton {...props} variantId="32453520654473" text="Select 32453520654473" />
         <VariantSelectButton {...props} variantId="33207187669129" text="Select 33207187669129" />
 
+      </div>
+    </div>
+  );    
+};
+
+
+const Feature3 = (props) => {
+  const cart = props.cart;
+  return (
+    <div className="feature">
+      <div className="code">
+        <pre>
+          <code className="language-jsx">
+          {`<Cart {...props} />`}
+          </code>
+        </pre>
+      </div>
+      <div className="example">
+        <Cart {...props} />
       </div>
     </div>
   );    
@@ -85,9 +103,9 @@ function App() {
   return (
     
     <div className="container">
-    <Feature1 {...props} />
-    <Feature2 {...props} />
-
+      <Feature3 {...props} />
+      <Feature1 {...props} />
+      <Feature2 {...props} />
     </div>
     
 

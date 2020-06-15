@@ -9,7 +9,7 @@ import Prism from 'prismjs';
 import PrismJsx from 'prismjs/components/prism-jsx.min';
 import Cart from './components/cart';
 import AddonToggle from './components/addon_toggle';
-
+import PaypalCheckout from './components/paypal_checkout';
 import 'prismjs/themes/prism.css';
 
 window.Prism = Prism;  Prism.highlightAll();
@@ -90,6 +90,24 @@ const Feature4 = (props) => {
   );    
 };
 
+const Feature5 = (props) => {
+  const cart = props.cart;
+  return (
+    <div className="feature">
+      <div className="code">
+        <pre>
+          <code className="language-jsx">
+          {`<PaypalCheckout text={"Addon 32465472979081"} {...props} />`}
+          </code>
+        </pre>
+      </div>
+      <div className="example">
+        <PaypalCheckout text={"Checkout Paypal"} {...props} />
+      </div>
+    </div>
+  );    
+};
+
 
 
 function App() {
@@ -127,6 +145,7 @@ function App() {
       <Feature1 {...props} />
       <Feature2 {...props} />
       <Feature4 {...props} />
+      <Feature5 {...props} />
     </div>
     
 

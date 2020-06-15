@@ -18,10 +18,6 @@ const CcCheckoutForm = (props) => {
     
     <form className="checkout-credit-card-form">
 
-    <select>
-     <YearOptions />
-    </select>
-
       <h4>Contract Information</h4>
 
       <div className="form-group">

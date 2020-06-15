@@ -5,7 +5,11 @@ import loadSettings from './load_settings';
 import SubtotalValue from './subtotal_value';
 import Loading from './loading';
 import Prism from 'prismjs';
+import PrismJsx from 'prismjs/components/prism-jsx.min';
+
 import 'prismjs/themes/prism.css';
+
+window.Prism = Prism;  Prism.highlightAll();
 
 function App() {
   const promises = [];
@@ -24,6 +28,10 @@ function App() {
     return <Loading />
   }
   
+  setTimeout(()=> {
+    Prism.highlightAll()
+  }, 500);
+  
   return (
     
     <div className="container">
@@ -31,7 +39,7 @@ function App() {
       <div className="feature">
         <div className="code">
           <pre>
-            <code>
+            <code className="language-jsx">
             {`<SubtotalValue cart={cart} />`}
             </code>
           </pre>

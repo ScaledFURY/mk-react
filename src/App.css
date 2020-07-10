@@ -1,38 +1,70 @@
-.App {
-  text-align: center;
+button, a, input, select {
+  cursor: pointer;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.checkout-money {
+  text-align: right;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+.checkout-cart-display .product-line td{
+    border-bottom: 1px solid #eee;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.checkout-cart-display .product-line:first-child td {
+  border-top: 1px solid #eee;
 }
 
-.App-link {
-  color: #61dafb;
+
+.checkout-cart-display .product-line td {
+    padding: 15px 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.checkout-cart-display .product-line:last-child td {
+  padding-bottom: 0;
+}
+
+
+/* This class is set when a variant button is selected */
+.checkout-selected-variant {
+  background-color: yellow;
+}
+
+.checkout-variant-target.checkout-selected-variant {
+  color: green;
+  background-color: #fff;
+}
+
+.checkout-selected-addon {
+  background-color: yellow;
+}
+
+/* checkout-invalid-field is placed on the form-group when the field is invalid */
+.checkout-invalid-field label {
+  color: red;
+}
+
+/* Outlines invalid fields */
+.checkout-invalid-field input, .checkout-invalid-field select {
+  border: 1px solid red;
+}
+/* This is the class on the error text shown next to an invalid input */
+.checkout-validation-help-text {
+  font-weight: italic;
+  font-size: small;
+  color: red;
+}
+
+/* Added to a form-group when the field validates successfully */
+.checkout-valid-field {
+}
+
+/* This handles the billing address fields  */
+/* It will only dislay the billing fields if they click "Use a different billing address" */
+.checkout-billing-fields {
+  display: none;
+}
+.checkout-use-billing-address .checkout-billing-fields {
+  display: block;
 }

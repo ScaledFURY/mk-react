@@ -51,9 +51,9 @@ export default function(props) {
     
       <hr />
       
-      <Link to="/checkout">
+      <a href="/checkout">
         <button>Checkout!</button>
-      </Link>
+      </a>
         
     </div>
     

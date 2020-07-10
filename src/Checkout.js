@@ -1,12 +1,7 @@
 import React from 'react';
 
 export default function(props) {
-  
-  // Temporary Hack
-  setTimeout(()=> {
-    window.checkout.init();
-  }, 1000);
-  
+    
   return (
     <div>
     <h1>Checkout</h1>
@@ -35,24 +30,24 @@ export default function(props) {
 
       <div className="form-group">
         <label htmlFor="email">Email</label>
-        <input id="email" type="email" name="email" value="sblackstone+testing@gmail.com" />
+        <input id="email" type="email" name="email" defaultValue="sblackstone+testing@gmail.com" />
       </div>
 
       <h4>Shipping Address</h4>
 
       <div className="form-group">
         <label htmlFor="shipping_first_name">First Name</label>
-        <input type="text" id="shipping_first_name" name="shipping_first_name" value="Test" />
+        <input type="text" id="shipping_first_name" name="shipping_first_name" defaultValue="Test" />
       </div>
 
       <div className="form-group">
         <label htmlFor="shipping_last_name">Last Name</label>
-        <input id="shipping_last_name" type="text" name="shipping_last_name" value="Order" />
+        <input id="shipping_last_name" type="text" name="shipping_last_name" defaultValue="Order" />
       </div>
 
       <div className="form-group">
         <label htmlFor="shipping_address_1">Address 1</label>
-        <input id="shipping_address_1" type="text" name="shipping_address1" value="123 Fake St" />
+        <input id="shipping_address_1" type="text" name="shipping_address1" defaultValue="123 Fake St" />
       </div>
 
       <div className="form-group">
@@ -62,18 +57,18 @@ export default function(props) {
 
       <div className="form-group">
         <label htmlFor="shipping_city">City</label>
-        <input id="shipping_city" type="text" name="shipping_city" value="Fakeville" />
+        <input id="shipping_city" type="text" name="shipping_city" defaultValue="Fakeville" />
       </div>
 
       <div className="form-group">
         <label htmlFor="shipping_state">State</label>
-        <select id="shipping_state" name="shipping_state" data-country="US" value="CT">
+        <select id="shipping_state" name="shipping_state" data-country="US" defaultValue="CT">
         </select>
       </div>
 
       <div className="form-group">
         <label htmlFor="shipping_postal_code">ZIP Code</label>
-        <input type="text" name="shipping_postal_code" value="06401" />
+        <input type="text" name="shipping_postal_code" defaultValue="06401" />
       </div>
 
       <div className="form-group">
@@ -90,10 +85,10 @@ export default function(props) {
       <h4>Billing Address</h4>
 
       <div className="form-group">
-        <input type="radio" id="billing_use_shipping_true" name="billing_use_shipping" value="true" defaultChecked />
+        <input type="radio" id="billing_use_shipping_true" name="billing_use_shipping" defaultValue="true" defaultChecked />
         <label htmlFor="billing_use_shipping_true">Same as Shipping Address</label>
 
-        <input type="radio" id="billing_use_shipping_false" name="billing_use_shipping" value="false" />
+        <input type="radio" id="billing_use_shipping_false" name="billing_use_shipping" defaultValue="false" />
         <label htmlFor="billing_use_shipping_false">Use a different billing address</label>
       </div>
 

@@ -2,7 +2,6 @@ import React from 'react';
 
 export default function(props) {
   return (
-
     <div>
     <h1>Special Offer 2</h1>
     

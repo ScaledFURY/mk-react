@@ -8,6 +8,8 @@ import {
 } from "react-router-dom";
 
 export default function(props) {
+  
+
   return (
     <div>
       <h1>Lander 1</h1>
@@ -52,7 +54,7 @@ export default function(props) {
       <Link to="/checkout">
         <button>Checkout!</button>
       </Link>
-    
+        
     </div>
     
     

@@ -1,6 +1,12 @@
 import React from 'react';
 
 export default function(props) {
+  
+  // Temporary Hack
+  setTimeout(()=> {
+    window.checkout.init();
+  }, 1000);
+  
   return (
     <div>
     <h1>Checkout</h1>

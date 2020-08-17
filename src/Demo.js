@@ -6,7 +6,7 @@ import './Demo.scss';
 import Cart from './components/Cart';
 import CouponField from './components/CouponField.js';
 import SubtotalValue from './components/SubtotalValue.js';
-
+import AddonToggle from './components/AddonToggle.js';
 
 const CartDemoLine = (props) => {
   return (
@@ -65,6 +65,26 @@ const SubtotalValueDemoLine = (props) => {
 };
 
 
+const AddonToggleDemoLine = (props) => {
+  return (
+    <React.Fragment>
+    <div className="left">
+      <pre>
+        <code className="language-html">
+        {`<AddonToggle {...props} variantId={32465472979081} />`}
+        </code>
+      </pre>
+    </div>
+    <div className="right">
+      <AddonToggle {...props} variantId={32465472979081} />
+    </div>
+    </React.Fragment>
+    
+  )
+};
+
+
+
 export default function(props) {
   window.stuff = props;
 
@@ -87,8 +107,17 @@ export default function(props) {
       <div className="demo-container">
         <SubtotalValueDemoLine {...props} />  
       </div>
+    
+      <div className="demo-container">
+        <AddonToggleDemoLine {...props} text={"Add Insurance"} />  
+      </div>
+    
+    
+    
 
-
+      <ul>
+        <li>checkout-variant-target</li>
+      </ul>
     </div>
     
   )

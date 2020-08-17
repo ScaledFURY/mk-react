@@ -8,6 +8,7 @@ import Receipt from './Receipt';
 import Demo from './Demo';
 import loadSettings from './load_settings';
 import ApiClient from './ApiClient';
+import LocalCart from './local-cart';
 import { useState, useEffect } from 'react';
 
 
@@ -24,13 +25,22 @@ function App(props) {
   
   const [ settings, setSettings ] = useState(null);
   
-  const [ cart, setCart ] = useState(null);
+  const [ cart, setCartReal ] = useState(null);
 
   const [ meta, setMeta ] = useState(null);
 
   const [ apiClient, setApiClient] = useState(null);
   
+  const [ localCart, setLocalCart ] = useState(null);
+  
+  
+  const setCart = (cart) => {
+    setCartReal(cart);
+    setLocalCart(new LocalCart(cart.localCart));
+  };
+  
   window.cart = cart;
+  window.localCart = localCart;
     
   useEffect(()=> {
     const newSettings = Object.assign({}, props, loadSettings());
@@ -49,7 +59,7 @@ function App(props) {
   }, [ settings, apiClient ]);
   
   
-  const passProps = { settings, cart, meta, apiClient, setCart };
+  const passProps = { settings, cart, meta, apiClient, setCart, localCart };
 
 
   return (

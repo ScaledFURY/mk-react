@@ -1,13 +1,11 @@
 import React from 'react';
 import logo from './logo.svg';
 import Lander1 from './Lander1';
-import Lander2 from './Lander2';
-import Checkout from './Checkout'
-
-
+import Checkout1 from './Checkout1'
 import Upsell1 from './Upsell1';
 import Upsell2 from './Upsell2';
 import Receipt from './Receipt';
+import Demo from './Demo';
 
 import {
   BrowserRouter as Router,
@@ -23,27 +21,27 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/lander1">
-          <Lander1 />
-        </Route>
-        <Route path="/lander2">
-          <Lander2 />
-        </Route>
-        <Route path="/checkout">
-          <Checkout />
-        </Route>
 
-        <Route path="/upsell1">
-          <Upsell1 />
-        </Route>
+        <Route path="*" render={() => {
+          
+          const qp = new URLSearchParams(window.location.search);
+          const page = qp.get('page');;
+          
+        
+          switch (page) {
+            case 'lander1':    return ( <Lander1 />);
+            case 'checkout1':  return ( <Checkout1 />);
+            case 'upsell1':    return ( <Upsell1 />);
+            case 'upsell2':    return ( <Upsell2 />);
+            case 'receipt':    return ( <Receipt />);
+            case 'demo':       return ( <Demo    />);
+            default:           return (null);
+          
+          }
 
-        <Route path="/upsell2">
-          <Upsell2 />
-        </Route>
 
-        <Route path="/receipt">
-          <Receipt />
-        </Route>
+        }} />
+        
 
       </Switch>
     </Router>

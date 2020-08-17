@@ -3,7 +3,46 @@ import Prism from "prismjs";
 import 'prismjs/themes/prism.css';
 import 'prismjs/themes/prism-coy.css';
 import './Demo.scss';
+import Cart from './components/Cart';
+import CouponField from './components/CouponField.js';
 
+
+const CartDemoLine = (props) => {
+  return (
+    <React.Fragment>
+    <div className="left">
+      <pre>
+        <code className="language-html">
+        {`<Cart {...props} />`}
+        </code>
+      </pre>
+    </div>
+    <div className="right">
+      <Cart {...props} />
+    </div>
+    </React.Fragment>
+    
+  )
+};
+
+
+const CouponFieldDemoLine = (props) => {
+  return (
+    <React.Fragment>
+    <div className="left">
+      <pre>
+        <code className="language-html">
+        {`<CouponField {...props} />`}
+        </code>
+      </pre>
+    </div>
+    <div className="right">
+      <CouponField {...props} />
+    </div>
+    </React.Fragment>
+    
+  )
+};
 
 export default function(props) {
   window.stuff = props;
@@ -15,26 +54,16 @@ export default function(props) {
   });
 
   return (
-    <React.Fragment>
+    <div className="demo-root">
       <h1>Demo</h1>
       <div className="demo-container">
-        <div className="left">
-          <pre>
-            <code className="language-html">
-            {`
-              <Stuff />
-            `}
-            </code>
-          </pre>
-        </div>
-    
-        <div className="right">
-            aaaa
-        </div>
-    
+        <CartDemoLine {...props} />
       </div>
 
-    </React.Fragment>
+      <div className="demo-container">
+        <CouponFieldDemoLine {...props} />  
+      </div>
+    </div>
     
   )
 }

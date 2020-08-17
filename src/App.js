@@ -22,26 +22,34 @@ import './App.css';
 
 function App(props) {
   
-  
   const [ settings, setSettings ] = useState(null);
   
+  const [ cart, setCart ] = useState(null);
+
+  const [ meta, setMeta ] = useState(null);
+
+  const [ apiClient, setApiClient] = useState(null);
+  
+  window.cart = cart;
+    
   useEffect(()=> {
-    const tmp = Object.assign({}, props, loadSettings());
-    tmp.apiClient  = new ApiClient(tmp);
-    setSettings(tmp);      
+    const newSettings = Object.assign({}, props, loadSettings());
+    setSettings(newSettings);
+    setApiClient(new ApiClient(newSettings));
   }, [ props ]);
 
   useEffect(()=> {
-    if (settings !== null && !settings.meta) {
+    if (apiClient !== null) {
       (async () => {
-        const meta = await settings.apiClient.getMeta();        
-        const t = Object.assign({}, settings, meta);
-        t.cart = await settings.apiClient.getCart(t);
-        setSettings(t);
-      })();
+        const meta = await apiClient.getMeta();        
+        setMeta(meta);
+        setCart(await apiClient.getCart({ ...settings, ...meta }));
+      })();      
     }
-  }, [ settings ]);
+  }, [ settings, apiClient ]);
   
+  
+  const passProps = { settings, cart, meta, apiClient, setCart };
 
 
   return (
@@ -55,12 +63,12 @@ function App(props) {
           
         
           switch (page) {
-            case 'lander1':    return ( <Lander1 {...settings}   />);
-            case 'checkout1':  return ( <Checkout1 {...settings} />);
-            case 'upsell1':    return ( <Upsell1 {...settings}   />);
-            case 'upsell2':    return ( <Upsell2 {...settings}   />);
-            case 'receipt':    return ( <Receipt {...settings}   />);
-            case 'demo':       return ( <Demo    {...settings}   />);
+            case 'lander1':    return ( <Lander1 {...passProps}   />);
+            case 'checkout1':  return ( <Checkout1 {...passProps} />);
+            case 'upsell1':    return ( <Upsell1 {...passProps}   />);
+            case 'upsell2':    return ( <Upsell2 {...passProps}   />);
+            case 'receipt':    return ( <Receipt {...passProps}   />);
+            case 'demo':       return ( <Demo    {...passProps}   />);
             default:           return (null);
           
           }

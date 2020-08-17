@@ -16,7 +16,7 @@ import {
 
 import './App.css';
 
-function App() {
+function App(props) {
       
   return (
     <Router>
@@ -29,12 +29,12 @@ function App() {
           
         
           switch (page) {
-            case 'lander1':    return ( <Lander1 />);
-            case 'checkout1':  return ( <Checkout1 />);
-            case 'upsell1':    return ( <Upsell1 />);
-            case 'upsell2':    return ( <Upsell2 />);
-            case 'receipt':    return ( <Receipt />);
-            case 'demo':       return ( <Demo    />);
+            case 'lander1':    return ( <Lander1 {...props}   />);
+            case 'checkout1':  return ( <Checkout1 {...props} />);
+            case 'upsell1':    return ( <Upsell1 {...props}   />);
+            case 'upsell2':    return ( <Upsell2 {...props}   />);
+            case 'receipt':    return ( <Receipt {...props}   />);
+            case 'demo':       return ( <Demo    {...props}   />);
             default:           return (null);
           
           }

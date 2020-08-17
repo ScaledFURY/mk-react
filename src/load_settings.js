@@ -6,6 +6,8 @@ const loadSettings = () => {
   const urlParams         = new URLSearchParams(window.location.search);
   settings.urlCoupon      = urlParams.get('coupon');
   settings.forceVariantId = urlParams.get('forceVariantId');
+  settings.resetCookie    = urlParams.get('resetCookie') === 'true';
+
   settings.checkoutPage   = window.location;
 
   for (const [key,value] of urlParams.entries()) {

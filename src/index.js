@@ -3,15 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import loadSettings from './load_settings';
-import ApiClient from './ApiClient';
-
-const settings = loadSettings();
-const apiClient = new ApiClient(settings);
 
 ReactDOM.render(
   <React.StrictMode>
-  <App {...settings} {...apiClient} />
+  <App />
   </React.StrictMode>,
   document.getElementById('root')
 );

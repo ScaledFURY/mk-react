@@ -7,6 +7,8 @@ import Cart from './components/Cart';
 import CouponField from './components/CouponField.js';
 import SubtotalValue from './components/SubtotalValue.js';
 import AddonToggle from './components/AddonToggle.js';
+import SelectVariant from './components/SelectVariant.js';
+
 
 const CartDemoLine = (props) => {
   return (
@@ -71,17 +73,42 @@ const AddonToggleDemoLine = (props) => {
     <div className="left">
       <pre>
         <code className="language-html">
-        {`<AddonToggle {...props} variantId={32465472979081} />`}
+        {`<AddonToggle {...props} variantId={32465472979081} text={"Add Insurance"} />`}
         </code>
       </pre>
     </div>
     <div className="right">
-      <AddonToggle {...props} variantId={32465472979081} />
+      <AddonToggle {...props} variantId={32465472979081} text={"Add Insurance"} />
     </div>
     </React.Fragment>
     
   )
 };
+
+
+const SelectVariantDemoLine = (props) => {
+  let codeStr = ``;
+  
+  codeStr += `<SelectVariant {...props} variantId={32453520621705} text={"Choose 32453520621705"} />\n`;
+  codeStr += `<SelectVariant {...props} variantId={32453520654473} text={"Choose 32453520654473"} />\n`;
+  codeStr += `<SelectVariant {...props} variantId={33207187669129} text={"Choose 33207187669129"} />\n`;
+  return (
+    <React.Fragment>
+    <div className="left">
+      <pre>
+      <code className="language-html">{codeStr}</code>
+      </pre>
+    </div>
+    <div className="right">
+        <SelectVariant {...props} variantId={32453520621705} text={"Choose 32453520621705"} />
+        <SelectVariant {...props} variantId={32453520654473} text={"Choose 32453520654473"} />
+        <SelectVariant {...props} variantId={33207187669129} text={"Choose 33207187669129"} />
+    </div>
+    </React.Fragment>
+    
+  )
+};
+
 
 
 
@@ -109,11 +136,14 @@ export default function(props) {
       </div>
     
       <div className="demo-container">
-        <AddonToggleDemoLine {...props} text={"Add Insurance"} />  
+        <AddonToggleDemoLine {...props} />  
       </div>
-    
-    
-    
+
+
+      <div className="demo-container">
+        <SelectVariantDemoLine {...props} text={"Add Insurance"} />  
+      </div>
+        
 
       <ul>
         <li>checkout-variant-target</li>

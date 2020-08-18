@@ -3,6 +3,7 @@ import Prism from "prismjs";
 import 'prismjs/themes/prism.css';
 import 'prismjs/themes/prism-coy.css';
 import './Demo.scss';
+import 'prismjs/components/prism-jsx.js';
 import Cart from './components/Cart';
 import CouponField from './components/CouponField.js';
 import SubtotalValue from './components/SubtotalValue.js';
@@ -15,7 +16,7 @@ const CartDemoLine = (props) => {
     <React.Fragment>
     <div className="left">
       <pre>
-        <code className="language-html">
+        <code className="language-jsx">
         {`<Cart {...props} />`}
         </code>
       </pre>
@@ -34,7 +35,7 @@ const CouponFieldDemoLine = (props) => {
     <React.Fragment>
     <div className="left">
       <pre>
-        <code className="language-html">
+        <code className="language-jsx">
         {`<CouponField {...props} />`}
         </code>
       </pre>
@@ -53,7 +54,7 @@ const SubtotalValueDemoLine = (props) => {
     <React.Fragment>
     <div className="left">
       <pre>
-        <code className="language-html">
+        <code className="language-jsx">
         {`<SubtotalValue {...props} />`}
         </code>
       </pre>
@@ -72,7 +73,7 @@ const AddonToggleDemoLine = (props) => {
     <React.Fragment>
     <div className="left">
       <pre>
-        <code className="language-html">
+        <code className="language-jsx">
         {`<AddonToggle {...props} variantId={32465472979081} text={"Add Insurance"} />`}
         </code>
       </pre>
@@ -96,7 +97,7 @@ const SelectVariantDemoLine = (props) => {
     <React.Fragment>
     <div className="left">
       <pre>
-      <code className="language-html">{codeStr}</code>
+      <code className="language-jsx">{codeStr}</code>
       </pre>
     </div>
     <div className="right">

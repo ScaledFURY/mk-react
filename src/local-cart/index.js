@@ -126,7 +126,8 @@ LocalCart.fromJSON = (jsonStr) => {
   return new LocalCart(JSON.parse(jsonStr));
 }
 
-module.exports = LocalCart;
+export default LocalCart;
+//module.exports = LocalCart;
 
 /*
 const lc = new LocalCart();

@@ -90,9 +90,9 @@ const AddonToggleDemoLine = (props) => {
 const SelectVariantDemoLine = (props) => {
   let codeStr = ``;
   
-  codeStr += `<SelectVariant {...props} variantId={32453520621705} text={"Choose 32453520621705"} />\n`;
-  codeStr += `<SelectVariant {...props} variantId={32453520654473} text={"Choose 32453520654473"} />\n`;
-  codeStr += `<SelectVariant {...props} variantId={33207187669129} text={"Choose 33207187669129"} />\n`;
+  codeStr += `<SelectVariant {...props} variantId={32453520621705} text={"Choose Opt1"} />\n`;
+  codeStr += `<SelectVariant {...props} variantId={32453520654473} text={"Choose Opt2"} />\n`;
+  codeStr += `<SelectVariant {...props} variantId={33207187669129} text={"Choose Opt3"} />\n`;
   return (
     <React.Fragment>
     <div className="left">
@@ -101,9 +101,9 @@ const SelectVariantDemoLine = (props) => {
       </pre>
     </div>
     <div className="right">
-        <SelectVariant {...props} variantId={32453520621705} text={"Choose 32453520621705"} />
-        <SelectVariant {...props} variantId={32453520654473} text={"Choose 32453520654473"} />
-        <SelectVariant {...props} variantId={33207187669129} text={"Choose 33207187669129"} />
+        <SelectVariant {...props} variantId={32453520621705} text={"Choose Opt1"} />
+        <SelectVariant {...props} variantId={32453520654473} text={"Choose Opt2"} />
+        <SelectVariant {...props} variantId={33207187669129} text={"Choose Opt3"} />
     </div>
     </React.Fragment>
     

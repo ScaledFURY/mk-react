@@ -1,14 +1,26 @@
+.demo-root {
+  padding: 15px;
 
-.checkout-coupon-button {
-  width: 100px;
+  button {
+    width: 150px;
+    border: 1px solid #eee;
+    display: inline-block;
+    margin: 15px 0;
+    &:first-child {
+      margin: 0;
+    };
+  }
+
+
+
 }
 
 .demo-container {
   display: flex;
   width: 100;
-  padding: 15px;
   flex-direction: row;
-
+  border-bottom: 1px solid #eee;
+  margin: 25px 0;
   .left, .right {
     padding: 15px;
     display: flex;

@@ -65,26 +65,31 @@ function App(props) {
   return (
     <Router>
       <Switch>
+    
+        <Route path="/lander1">
+          <Lander1 {...passProps}   />
+        </Route>
 
-        <Route path="*" render={() => {
-          
-          const qp = new URLSearchParams(window.location.search);
-          const page = qp.get('page');;
-          
-        
-          switch (page) {
-            case 'lander1':    return ( <Lander1 {...passProps}   />);
-            case 'checkout1':  return ( <Checkout1 {...passProps} />);
-            case 'upsell1':    return ( <Upsell1 {...passProps}   />);
-            case 'upsell2':    return ( <Upsell2 {...passProps}   />);
-            case 'receipt':    return ( <Receipt {...passProps}   />);
-            case 'demo':       return ( <Demo    {...passProps}   />);
-            default:           return (null);
-          
-          }
+        <Route path="/checkout1">
+          <Checkout1 {...passProps}   />
+        </Route>
+
+        <Route path="/upsell1">
+          <Checkout1 {...passProps}   />
+        </Route>
+
+        <Route path="/upsell2">
+          <Checkout1 {...passProps}   />
+        </Route>
 
 
-        }} />
+        <Route path="/receipt">
+          <Receipt {...passProps}   />
+        </Route>
+
+        <Route path="/demo">
+          <Demo {...passProps}   />
+        </Route>
         
 
       </Switch>
